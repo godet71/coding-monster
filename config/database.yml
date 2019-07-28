@@ -1,19 +1,20 @@
 default: &default
-  adapter: mysql12
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   username: root
   password: codingmonster
-  socket: /tmp/mysql.sock
+  host: comon.c4gbggw1ml5c.ap-northeast-2.rds.amazonaws.com
+  port: 3306
+
+
 development:
   <<: *default
   database: development_instuigram
-
 test:
   <<: *default
-  database: test_instuigram
-
+  database: development_instuigram
 production:
   <<: *default
   database: development_instuigram
