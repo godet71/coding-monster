@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :posts, only: [:new, :create, :show, :destroy]
   get 'search' => 'search#index'
+
+  get 'chun' => 'home#chun'
+
+
 end
